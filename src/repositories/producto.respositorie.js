@@ -1,4 +1,4 @@
-import { config } from "dotenv"
+
 import db from "../config/db.js"
 
 export const getAllProducts = () => {

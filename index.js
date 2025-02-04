@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv"
 import db from "./src/config/db.js";
 import indexRouter from "./src/routes/index.route.js";
+import authRoutes from "./src/auth/routes/auth.route.js";
 
 dotenv.config()
 
@@ -18,6 +19,7 @@ app.listen(app.get("PORT"), () => {
 })
 
 app.use("/", indexRouter)
+app.use("/api/auth", authRoutes);
 
 app.use("*", (req, res) => {
     res.status(400).json("Este endpoint no existe")
